@@ -3,20 +3,15 @@
 <head>
     <meta charset="utf-8">
     
-    <title>测试 | 蒋冲</title>
+    <title>标签: CSS | 蒋冲</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="第一篇测试">
-<meta name="keywords" content="日记">
-<meta property="og:type" content="article">
-<meta property="og:title" content="测试">
-<meta property="og:url" content="http://yoursite.com/2018/03/22/日记/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="蒋冲">
+<meta property="og:url" content="http://yoursite.com/tags/CSS/index.html">
 <meta property="og:site_name" content="蒋冲">
-<meta property="og:description" content="第一篇测试">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-24T13:57:47.593Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="测试">
-<meta name="twitter:description" content="第一篇测试">
+<meta name="twitter:title" content="蒋冲">
     
 
     
@@ -144,154 +139,97 @@
 
         <div class="outer">
             
-            <section id="main"><article id="post-日记" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">燚</h2>
+            <h3 id="title">JavaScript Developer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Beijing, China</span>
+            <a id="follow" target="_blank" href="https://github.com/Jangchong">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                4
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                3
+                <span>标签</span>
+            </div>
+        </div>
         
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/Jangchong" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="wechat" class=tooltip>
+                            <i class="fa fa-wechat"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
         
-            <header class="article-header">
+    </div>
+</aside>
+
+            
+            <section id="main">
+<div class="timeline timeline-wrap">
+    <div class="timeline-row timeline-row-major">
+        <span class="node"><i class="fa fa-tag"></i></span>
+        <h1 class="title">#CSS</h1>
+    </div>
+    
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
                 
     
-        <h1 class="article-title" itemprop="name">
-            测试
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2018/03/24/七种三栏布局/">三栏布局</a>
         </h1>
     
 
-                
-                    <div class="article-meta">
-                        
+                <div class="article-meta">
+                    
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/03/22/日记/">
-            <time datetime="2018-03-21T16:00:00.000Z" itemprop="datePublished">2018-03-22</time>
+        <a href="/2018/03/24/七种三栏布局/">
+            <time datetime="2018-03-24T14:13:35.000Z" itemprop="datePublished">2018-03-24</time>
         </a>
     </div>
 
 
-                        
+                    
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/文学篇/">文学篇</a>
+        <a class="article-category-link" href="/categories/source/">source</a>
     </div>
 
-                        
+                    
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/日记/">日记</a>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>
     </div>
 
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h3 id="第一篇测试"><a href="#第一篇测试" class="headerlink" title="第一篇测试"></a>第一篇测试</h3>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/03/22/日记/" data-id="cjfif3acw0004gsfmg54uz1dt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2018/03/23/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    Hello World
-                
+                </div>
             </div>
-        </a>
+        </div>
     
-    
-</nav>
-
-
-    
-</article>
-
-
-    
-    
-
+</div>
 </section>
             
             
