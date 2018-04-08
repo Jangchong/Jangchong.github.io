@@ -5,18 +5,18 @@
     
     <title>vue子父组件属性之间的操作 | 蒋冲</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="属性改变 父组件事件触发改变子组件属性值  在Vue中，父子组件的关系可以总结为 prop 向下传递，事件向上传递。父组件通过 prop 给子组件下发数据，子组件通过事件给父组件发送消息。  父组件创建一个改变事件">
+    <meta name="description" content="属性改变 父组件事件触发改变子组件属性值         在Vue中，父子组件的关系可以总结为 prop 向下传递，事件向上传递。父组件通过 prop 给子组件下发数据，子组件通过事件给父组件发送消息。  父组件创建一个改变事件">
 <meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue子父组件属性之间的操作">
 <meta property="og:url" content="http://yoursite.com/2018/04/02/父组件改变子组件属性/index.html">
 <meta property="og:site_name" content="蒋冲">
-<meta property="og:description" content="属性改变 父组件事件触发改变子组件属性值  在Vue中，父子组件的关系可以总结为 prop 向下传递，事件向上传递。父组件通过 prop 给子组件下发数据，子组件通过事件给父组件发送消息。  父组件创建一个改变事件">
+<meta property="og:description" content="属性改变 父组件事件触发改变子组件属性值         在Vue中，父子组件的关系可以总结为 prop 向下传递，事件向上传递。父组件通过 prop 给子组件下发数据，子组件通过事件给父组件发送消息。  父组件创建一个改变事件">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-07T15:35:50.075Z">
+<meta property="og:updated_time" content="2018-04-08T14:35:41.782Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue子父组件属性之间的操作">
-<meta name="twitter:description" content="属性改变 父组件事件触发改变子组件属性值  在Vue中，父子组件的关系可以总结为 prop 向下传递，事件向上传递。父组件通过 prop 给子组件下发数据，子组件通过事件给父组件发送消息。  父组件创建一个改变事件">
+<meta name="twitter:description" content="属性改变 父组件事件触发改变子组件属性值         在Vue中，父子组件的关系可以总结为 prop 向下传递，事件向上传递。父组件通过 prop 给子组件下发数据，子组件通过事件给父组件发送消息。  父组件创建一个改变事件">
     
 
     
@@ -188,7 +188,7 @@
         
             
             <h4 id="属性改变"><a href="#属性改变" class="headerlink" title="属性改变"></a>属性改变</h4><blockquote>
-<p>父组件事件触发改变子组件属性值</p>
+<p>父组件事件触发改变子组件属性值       </p>
 </blockquote>
 <p>在Vue中，父子组件的关系可以总结为 prop 向下传递，事件向上传递。父组件通过 prop 给子组件下发数据，子组件通过事件给父组件发送消息。</p>
 <ol>
@@ -196,7 +196,7 @@
 </ol>
 <a id="more"></a>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//data</span></span><br><span class="line"> <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            msg: <span class="string">'信息'</span>,</span><br><span class="line">            isCurr: &#123;</span><br><span class="line">                a:<span class="number">1</span>,</span><br><span class="line">                b:<span class="number">2</span></span><br><span class="line">            &#125;,</span><br><span class="line">            methods:&#123;</span><br><span class="line">                butFun:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                    <span class="keyword">this</span>.isCurr.a = <span class="number">2</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">'componmentBox'</span>&gt;</span><br><span class="line">    &lt;information  v-bind:defined=<span class="string">'isCurr'</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">information</span>&gt;</span></span></span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">'componmentBox'</span>&gt;</span><br><span class="line">    &lt;information  v-bind:defined=<span class="string">'isCurr'</span>&gt;&lt;/information&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>这里的<code>defined</code>是自己定义的名字，添加在子组件<code>props</code>里面，需要注意是：如果是驼峰名，例如：<code>nameShow</code>，<code>props</code>里面是：<code>props:[&quot;nameShow&quot;]</code>，父组件要添加属性是<code>v-bind:name-show=&quot;&quot;</code>;要添加“-”。</li>
 </ul>
@@ -221,7 +221,7 @@
 </ol>
 </li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">'componmentBox'</span> &gt;</span><br><span class="line">    &lt;educationdate v-on:backChangeFalse=<span class="string">'backChangeFalse'</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">educationdate</span>&gt;</span></span></span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">'componmentBox'</span> &gt;</span><br><span class="line">    &lt;educationdate v-on:backChangeFalse=<span class="string">'backChangeFalse'</span>&gt;&lt;/educationdate&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            back:<span class="literal">true</span>;</span><br><span class="line">            methods:&#123;</span><br><span class="line">                backChangeFalse:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                    <span class="keyword">this</span>.back = <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
         </div>
@@ -232,7 +232,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/04/02/父组件改变子组件属性/" data-id="cjfpjkkwc000568fmc6opxprx" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/04/02/父组件改变子组件属性/" data-id="cjfqwtg4n0007fcfm91nsa0ng" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
