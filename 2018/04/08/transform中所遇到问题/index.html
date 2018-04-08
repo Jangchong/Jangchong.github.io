@@ -3,20 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>新页面 | 蒋冲</title>
+    <title>transform遇到问题 | 蒋冲</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="文章1var html = document.getElementById(&quot;#wrap&quot;) 第二篇">
-<meta name="keywords" content="js">
+    <meta name="description" content="scale()属性使用问题 transform:scale()缩放导致文字抖动问题   解决办法：在抖动区域元素上添加:transform:translateZ(0);">
+<meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="新页面">
-<meta property="og:url" content="http://yoursite.com/2018/03/24/新页面/index.html">
+<meta property="og:title" content="transform遇到问题">
+<meta property="og:url" content="http://yoursite.com/2018/04/08/transform中所遇到问题/index.html">
 <meta property="og:site_name" content="蒋冲">
-<meta property="og:description" content="文章1var html = document.getElementById(&quot;#wrap&quot;) 第二篇">
+<meta property="og:description" content="scale()属性使用问题 transform:scale()缩放导致文字抖动问题   解决办法：在抖动区域元素上添加:transform:translateZ(0);">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-24T13:46:13.542Z">
+<meta property="og:updated_time" content="2018-04-08T15:33:52.710Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="新页面">
-<meta name="twitter:description" content="文章1var html = document.getElementById(&quot;#wrap&quot;) 第二篇">
+<meta name="twitter:title" content="transform遇到问题">
+<meta name="twitter:description" content="scale()属性使用问题 transform:scale()缩放导致文字抖动问题   解决办法：在抖动区域元素上添加:transform:translateZ(0);">
     
 
     
@@ -144,7 +144,7 @@
 
         <div class="outer">
             
-            <section id="main"><article id="post-新页面" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-transform中所遇到问题" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -152,7 +152,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            新页面
+            transform遇到问题
         </h1>
     
 
@@ -161,8 +161,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/03/24/新页面/">
-            <time datetime="2018-03-24T13:13:35.000Z" itemprop="datePublished">2018-03-24</time>
+        <a href="/2018/04/08/transform中所遇到问题/">
+            <time datetime="2018-04-08T15:26:04.000Z" itemprop="datePublished">2018-04-08</time>
         </a>
     </div>
 
@@ -171,7 +171,7 @@
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/js/">js</a>
+        <a class="tag-link" href="/tags/css/">css</a>
     </div>
 
                     </div>
@@ -182,8 +182,23 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h3 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> html = <span class="built_in">document</span>.getElementById(<span class="string">"#wrap"</span>)</span><br></pre></td></tr></table></figure>
-<h4 id="第二篇"><a href="#第二篇" class="headerlink" title="第二篇"></a>第二篇</h4>
+            <h4 id="scale-属性使用问题"><a href="#scale-属性使用问题" class="headerlink" title="scale()属性使用问题"></a>scale()属性使用问题</h4><blockquote>
+<p>transform:scale()缩放导致文字抖动问题</p>
+</blockquote>
+<ul>
+<li>解决办法：<br>在抖动区域元素上添加:transform:translateZ(0);</li>
+</ul>
+<a id="more"></a>
+<h4 id="translate-作位移"><a href="#translate-作位移" class="headerlink" title="translate()作位移"></a>translate()作位移</h4><blockquote>
+<p>transform：translate代替position中的left做位移好处</p>
+</blockquote>
+<ul>
+<li><p>left是布局类的样式，这个样式的变化会导致重排（reflow/relayout），所谓重排即指对这些节点以及受这些节点影响的其它节点，进行CSS计算-&gt;布局-&gt;重绘过程，这个过程的前2步是消耗大量资源的</p>
+</li>
+<li><p>translate同样改变样式，这个样式的变化会导致重绘（repaint），不会进行CSS计算和布局这2个性能大户，所以我们认为translate性能上好于left</p>
+</li>
+</ul>
+
         
         </div>
         <footer class="article-footer">
@@ -193,7 +208,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/03/24/新页面/" data-id="cjfqz0lbl000870fm7m1nnqp4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/04/08/transform中所遇到问题/" data-id="cjfqz0lbd000470fmlne6tgfx" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -268,19 +283,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/03/24/七种三栏布局/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    三栏布局
-                
-            </div>
-        </a>
     
-    
-        <a href="/2018/03/23/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/04/08/默认滚动条样式修改/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">Hello World</div>
+            <div class="article-nav-title">默认滚动条样式修改</div>
         </a>
     
 </nav>
