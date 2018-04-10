@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Vue基础了解 | 蒋冲</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Vue入门介绍Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue基础了解">
+<meta property="og:url" content="http://yoursite.com/2018/04/10/Vue基础了解/index.html">
+<meta property="og:site_name" content="蒋冲">
+<meta property="og:description" content="Vue入门介绍Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-04-10T15:00:58.160Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue基础了解">
+<meta name="twitter:description" content="Vue入门介绍Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">蒋冲</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            <section id="main"><article id="post-Vue基础了解" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Vue基础了解
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/10/Vue基础了解/">
+            <time datetime="2018-04-10T13:37:25.000Z" itemprop="datePublished">2018-04-10</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Vue/">Vue</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">文章目录</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue入门"><span class="toc-number">1.</span> <span class="toc-text">Vue入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#介绍"><span class="toc-number">1.1.</span> <span class="toc-text">介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue"><span class="toc-number">2.</span> <span class="toc-text">vue</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是双向数据绑定"><span class="toc-number">2.1.</span> <span class="toc-text">什么是双向数据绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue绑定文本"><span class="toc-number">2.2.</span> <span class="toc-text">Vue绑定文本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绑定的数据可以使用javaScript表达式"><span class="toc-number">2.3.</span> <span class="toc-text">绑定的数据可以使用javaScript表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue属性绑定"><span class="toc-number">2.4.</span> <span class="toc-text">Vue属性绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue输出html"><span class="toc-number">2.5.</span> <span class="toc-text">Vue输出html</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#样式的绑定"><span class="toc-number">2.6.</span> <span class="toc-text">样式的绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#绑定样式对象"><span class="toc-number">2.6.1.</span> <span class="toc-text">绑定样式对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#混合普通的HTML标签样式类及绑定样式对象"><span class="toc-number">2.6.2.</span> <span class="toc-text">混合普通的HTML标签样式类及绑定样式对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#绑定data中样式对象"><span class="toc-number">2.6.3.</span> <span class="toc-text">绑定data中样式对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#内联样式绑定"><span class="toc-number">2.6.4.</span> <span class="toc-text">内联样式绑定</span></a></li></ol></li></ol></li></ol>
+                </div>
+            
+            <h2 id="Vue入门"><a href="#Vue入门" class="headerlink" title="Vue入门"></a>Vue入门</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p><code>Vue</code> (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。<br><a id="more"></a></p>
+<h2 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h2><h3 id="什么是双向数据绑定"><a href="#什么是双向数据绑定" class="headerlink" title="什么是双向数据绑定"></a>什么是双向数据绑定</h3><p>Vue框架很核心的功能就是双向的数据绑定。 双向是指：HTML标签数据 绑定到 Vue对象，另外反方向数据也是绑定的。通俗点说就是，Vue对象的改变会直接影响到HTML的标签的变化，而且标签的变化也会反过来影响Vue对象的属性的变化。</p>
+<p>由Dom开发的主导时代更变为数据驱动开发时代。</p>
+<p>之前Dom驱动的开发方式尤其是以jQuery为主的开发时代，都是dom变化后，触发js事件，然后在事件中通过js代码取得标签的变化，再跟后台进行交互，然后根据后台返回的结果再更新HTML标签，异常的繁琐。有了Vue这种双向绑定，让开发人员只需要关心json数据的变化即可，Vue自动映射到HTML上，而且HTML的变化也会映射回js对象上</p>
+<h3 id="Vue绑定文本"><a href="#Vue绑定文本" class="headerlink" title="Vue绑定文本"></a>Vue绑定文本</h3><p>数据绑定最常见的形式就是使用 <code>Mustache</code>语法（双大括号）的文本插值</p>
+<h3 id="绑定的数据可以使用javaScript表达式"><a href="#绑定的数据可以使用javaScript表达式" class="headerlink" title="绑定的数据可以使用javaScript表达式"></a>绑定的数据可以使用javaScript表达式</h3><p>对于所有的数据绑定， Vue.js 都提供了完全的 JavaScript 表达式支持。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Message: &#123;&#123; msg + ' - ' + name &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  var app = new Vue(&#123;         // 创建Vue对象。Vue的核心对象。</span></span><br><span class="line"><span class="undefined">    el: '#app',               // el属性：把当前Vue对象挂载到 div标签上，#app是id选择器</span></span><br><span class="line"><span class="undefined">    data: &#123;                   // data: 是Vue对象中绑定的数据</span></span><br><span class="line"><span class="undefined">      msg: 'Hello',              // message 自定义的数据</span></span><br><span class="line"><span class="undefined">      name: 'world'       // name自定义的属性，vue可以多个自定义属性，属性类型也可是复杂类型</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>结果：Hello-world</p>
+</blockquote>
+<p>vue还支持表达式中的计算、函数处理。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Message: &#123;&#123; true ? '123' : '456'  &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Message: &#123;&#123; num*5  &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Vue属性绑定"><a href="#Vue属性绑定" class="headerlink" title="Vue属性绑定"></a>Vue属性绑定</h3><p><code>Vue</code>中不能直接使用<code></code>语法进行绑定<code>html</code>的标签，而是用它特有的<code>v-bind</code>指令<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">标签</span> <span class="attr">v-bind:</span>属性名=<span class="string">"绑定vue对象data里的属性名"</span>&gt;</span><span class="tag">&lt;/<span class="name">标签</span>&gt;</span></span><br><span class="line">例如：</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:attr</span>=<span class="string">"name"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><code>v-bind</code>使用非常频繁，所以Vue提供了简单的写法，可以去掉<code>v-bind</code>直接使用<code>:</code>即可</p>
+<h3 id="Vue输出html"><a href="#Vue输出html" class="headerlink" title="Vue输出html"></a>Vue输出html</h3><blockquote>
+<p>由于<code>Vue</code>对于输出绑定的内容做了提前<code>encode</code>，保障在绑定到页面上显示的时候不至于被<code>xs</code>s攻击。但某些场景下，我们确保后台数据是安全的，那么我们就要在网页中显示原生的<code>HTML</code>标签。<code>Vue</code>提供<code>了v-html</code>指令。</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-html</span>=<span class="string">"tagHtml"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  var app = new Vue(&#123;         </span></span><br><span class="line"><span class="undefined">    el: '#app',               </span></span><br><span class="line"><span class="undefined">    data: &#123;                   // data: 是Vue对象中绑定的数据</span></span><br><span class="line"><span class="xml">      tagHtml: '<span class="tag">&lt;<span class="name">p</span>&gt;</span>这里是p标签里的内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span>'</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="样式的绑定"><a href="#样式的绑定" class="headerlink" title="样式的绑定"></a>样式的绑定</h3><h4 id="绑定样式对象"><a href="#绑定样式对象" class="headerlink" title="绑定样式对象"></a>绑定样式对象</h4><p>经常我们需要对样式进行切换，比如：div的显示和隐藏<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    .active&#123;</span></span><br><span class="line"><span class="undefined">        background-color:red;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">代码：</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"&#123; active: isActive &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">解释：</span><br><span class="line">当 isActive为 true时，div就会具有了active样式类，如果isActive为false，那么div就去掉active样式类。</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    var app = new Vue(&#123;         </span></span><br><span class="line"><span class="undefined">      el: '#app',               </span></span><br><span class="line"><span class="undefined">      data: &#123;                   // data: 是Vue对象中绑定的数据</span></span><br><span class="line"><span class="undefined">        isActive: true</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="混合普通的HTML标签样式类及绑定样式对象"><a href="#混合普通的HTML标签样式类及绑定样式对象" class="headerlink" title="混合普通的HTML标签样式类及绑定样式对象"></a>混合普通的HTML标签样式类及绑定样式对象</h4><p><code>v-bind:class</code>指令可以和普通<code>class</code>共存;<br>最后它们会合并到一个class里<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"static"</span> <span class="attr">v-bind:class</span>=<span class="string">"&#123; active: isActive, 'text-danger': hasError &#125;"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  var app = new Vue(&#123;         </span></span><br><span class="line"><span class="undefined">    el: '#app',               </span></span><br><span class="line"><span class="undefined">    data: &#123; </span></span><br><span class="line"><span class="undefined">      isActive: true,</span></span><br><span class="line"><span class="undefined">      hasError: false</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>合并后：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;static active&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="绑定data中样式对象"><a href="#绑定data中样式对象" class="headerlink" title="绑定data中样式对象"></a>绑定data中样式对象</h4><p>直接在<code>html</code>属性中的双引号内写对象,没有智能提示，很容易写错.<code>Vue</code>可以让我们直接把绑定的<code>class</code>字符串指向<code>data</code>的一个对象</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"static"</span></span></span><br><span class="line"><span class="tag">     <span class="attr">v-bind:class</span>=<span class="string">"classObject"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  var app = new Vue(&#123;         </span></span><br><span class="line"><span class="undefined">    el: '#app',               </span></span><br><span class="line"><span class="undefined">    data: &#123;</span></span><br><span class="line"><span class="undefined">      classObject: &#123;</span></span><br><span class="line"><span class="undefined">        active: true,</span></span><br><span class="line"><span class="undefined">        'text-danger': false</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>得到结果：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"static active"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="内联样式绑定"><a href="#内联样式绑定" class="headerlink" title="内联样式绑定"></a>内联样式绑定</h4><p>内联样式的绑定，非常类似于样式类的操作。<code>v-bind:style</code> 的对象语法十分直观——看着非常像<code>CSS</code> ，其实它是一个 <code>JavaScript</code>对象。 <code>CSS</code>属性名可以用驼峰式（camelCase）或短横分隔命名（kebab-case）。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:style</span>=<span class="string">"&#123;fontSize: size + 'px', backgroundColor: bgcolor, width: width&#125;"</span>&gt;</span></span><br><span class="line">      vue 入门系列教程</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    var app = new Vue(&#123;         </span></span><br><span class="line"><span class="undefined">      el: '#app',               </span></span><br><span class="line"><span class="undefined">      data: &#123;                   </span></span><br><span class="line"><span class="undefined">        size: 19,</span></span><br><span class="line"><span class="undefined">        width: 200,</span></span><br><span class="line"><span class="undefined">        bgcolor: 'red'</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>自动添加前缀<br>当 <code>v-bind:style</code> 使用需要特定前缀的<code>CSS</code>属性时，如 <code>transform</code>，<code>Vue.js</code> 会自动侦测并添加相应的前缀。</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/04/10/Vue基础了解/" data-id="cjftsaben0001iofm3ar62gtc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/04/09/Promise/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">Promise</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+
+</section>
+            
+            
+
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 Zi Yi<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
