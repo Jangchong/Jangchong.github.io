@@ -3,20 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>transform遇到问题 | 蒋冲</title>
+    <title>Es2017中新的字符串方法:padStart和padEnd | 蒋冲</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="scale()属性使用问题 transform:scale()缩放导致文字抖动问题   解决办法：在抖动区域元素上添加:transform:translateZ(0);">
-<meta name="keywords" content="css">
+    <meta name="description" content="填充字符 padStart和padEnd填充字符">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="transform遇到问题">
-<meta property="og:url" content="http://yoursite.com/2018/04/08/transform中所遇到问题/index.html">
+<meta property="og:title" content="Es2017中新的字符串方法:padStart和padEnd">
+<meta property="og:url" content="http://yoursite.com/2018/04/22/Es2017中新的字符串方法-padStart和padEnd/index.html">
 <meta property="og:site_name" content="蒋冲">
-<meta property="og:description" content="scale()属性使用问题 transform:scale()缩放导致文字抖动问题   解决办法：在抖动区域元素上添加:transform:translateZ(0);">
+<meta property="og:description" content="填充字符 padStart和padEnd填充字符">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-08T15:33:52.710Z">
+<meta property="og:updated_time" content="2018-04-22T15:44:48.995Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="transform遇到问题">
-<meta name="twitter:description" content="scale()属性使用问题 transform:scale()缩放导致文字抖动问题   解决办法：在抖动区域元素上添加:transform:translateZ(0);">
+<meta name="twitter:title" content="Es2017中新的字符串方法:padStart和padEnd">
+<meta name="twitter:description" content="填充字符 padStart和padEnd填充字符">
     
 
     
@@ -144,7 +144,7 @@
 
         <div class="outer">
             
-            <section id="main"><article id="post-transform中所遇到问题" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-Es2017中新的字符串方法-padStart和padEnd" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -152,7 +152,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            transform遇到问题
+            Es2017中新的字符串方法:padStart和padEnd
         </h1>
     
 
@@ -161,8 +161,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/04/08/transform中所遇到问题/">
-            <time datetime="2018-04-08T15:26:04.000Z" itemprop="datePublished">2018-04-08</time>
+        <a href="/2018/04/22/Es2017中新的字符串方法-padStart和padEnd/">
+            <time datetime="2018-04-22T15:39:32.000Z" itemprop="datePublished">2018-04-22</time>
         </a>
     </div>
 
@@ -171,7 +171,7 @@
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/css/">css</a>
+        <a class="tag-link" href="/tags/js/">js</a>
     </div>
 
                     </div>
@@ -182,22 +182,40 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h4 id="scale-属性使用问题"><a href="#scale-属性使用问题" class="headerlink" title="scale()属性使用问题"></a>scale()属性使用问题</h4><blockquote>
-<p>transform:scale()缩放导致文字抖动问题</p>
+            <h3 id="填充字符"><a href="#填充字符" class="headerlink" title="填充字符"></a>填充字符</h3><blockquote>
+<p>padStart和padEnd填充字符</p>
 </blockquote>
-<ul>
-<li>解决办法：<br>在抖动区域元素上添加:transform:translateZ(0);</li>
-</ul>
 <a id="more"></a>
-<h4 id="translate-作位移"><a href="#translate-作位移" class="headerlink" title="translate()作位移"></a>translate()作位移</h4><blockquote>
-<p>transform：translate代替position中的left做位移好处</p>
-</blockquote>
 <ul>
-<li><p>left是布局类的样式，这个样式的变化会导致重排（reflow/relayout），所谓重排即指对这些节点以及受这些节点影响的其它节点，进行CSS计算-&gt;布局-&gt;重绘过程，这个过程的前2步是消耗大量资源的</p>
-</li>
-<li><p>translate同样改变样式，这个样式的变化会导致重绘（repaint），不会进行CSS计算和布局这2个性能大户，所以我们认为translate性能上好于left</p>
-</li>
+<li>填充字符串的用例包括：</li>
+<li>给需要的数字添加长度补0</li>
+<li>以等宽字体显示平整的数据。</li>
+<li>在文件名或URL中添加计数或ID：’file 001.txt’。</li>
+<li>对齐控制台输出： ‘Test 001: ✓’。</li>
+<li>打印具有固定位数的十六进制或二进制数字：’0x00FF’</li>
 </ul>
+<blockquote>
+<p>Demo1:  填充0</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*   param &#123;*&#125;  padStart(n,str)  在前面添加</span></span><br><span class="line"><span class="comment">*   param &#123;*&#125;  padEnd(n,str)</span></span><br><span class="line"><span class="comment">*   </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//根据位数前后补0</span></span><br><span class="line"><span class="string">"211"</span>.toString().padStart(<span class="number">5</span>,<span class="string">"0"</span>)</span><br><span class="line"><span class="string">"00211"</span></span><br><span class="line"></span><br><span class="line"><span class="string">"211"</span>.toString().padEnd(<span class="number">5</span>,<span class="string">"0"</span>)</span><br><span class="line"><span class="string">"21100"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Demo2: 第二个参数添加常度超过总长度，会自动截取到第几位</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"2112"</span>.toString().padStart(<span class="number">5</span>,<span class="string">"abcd"</span>)</span><br><span class="line"><span class="string">"a2112"</span></span><br><span class="line"></span><br><span class="line"><span class="string">"2112"</span>.toString().padEnd(<span class="number">5</span>,<span class="string">"abcd"</span>)</span><br><span class="line"><span class="string">"2112a"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Demo3: 第二个参数不写，则以空格的形式进行填充</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"123"</span>.toString().padEnd(<span class="number">5</span>)</span><br><span class="line"><span class="string">"123  "</span></span><br><span class="line"></span><br><span class="line"><span class="string">"123"</span>.toString().padStart(<span class="number">5</span>)</span><br><span class="line"><span class="string">"  123"</span></span><br></pre></td></tr></table></figure>
+<p>逻辑实现</p>
+<blockquote>
+<p><code>padStat()</code>逻辑实现</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.prototype.padStart = <span class="function"><span class="keyword">function</span> (<span class="params">maxLength, fillString=<span class="string">' '</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> str = <span class="built_in">String</span>(<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">if</span> (str.length &gt;= maxLength) &#123;</span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    fillString = <span class="built_in">String</span>(fillString);</span><br><span class="line">    <span class="keyword">if</span> (fillString.length === <span class="number">0</span>) &#123;</span><br><span class="line">        fillString = <span class="string">' '</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">let</span> fillLen = maxLength - str.length;</span><br><span class="line">    <span class="keyword">let</span> timesToRepeat = <span class="built_in">Math</span>.ceil(fillLen / fillString.length);</span><br><span class="line">    <span class="keyword">let</span> truncatedStringFiller = fillString</span><br><span class="line">        .repeat(timesToRepeat)</span><br><span class="line">        .slice(<span class="number">0</span>, fillLen);</span><br><span class="line">    <span class="keyword">return</span> truncatedStringFiller + str;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>padStart()</code>和<code>padEnd()</code> 的实现只是最后一行是不同</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> str + truncatedStringFiller;</span><br></pre></td></tr></table></figure>
+<p>参照了：<a href="http://exploringjs.com/es2016-es2017/ch_object-getownpropertydescriptors.html" target="_blank" rel="noopener">http://exploringjs.com/es2016-es2017/ch_object-getownpropertydescriptors.html</a></p>
 
         
         </div>
@@ -208,7 +226,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/04/08/transform中所遇到问题/" data-id="cjg9k4jy60008gsfmcl6g80mx" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/04/22/Es2017中新的字符串方法-padStart和padEnd/" data-id="cjg9k4jxk0000gsfmj97b8bqn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -283,19 +301,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/04/09/Promise/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    Promise
-                
-            </div>
-        </a>
     
-    
-        <a href="/2018/04/08/默认滚动条样式修改/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/04/21/浏览器切换页签时触发事件/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">默认滚动条样式修改</div>
+            <div class="article-nav-title">浏览器切换页签时触发事件</div>
         </a>
     
 </nav>
