@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>浏览器切换页签时触发事件 | 蒋冲</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="页面可见性API 先解决问题，后面理解">
+<meta name="keywords" content="question">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器切换页签时触发事件">
+<meta property="og:url" content="http://yoursite.com/2018/04/21/浏览器切换页签时触发事件/index.html">
+<meta property="og:site_name" content="蒋冲">
+<meta property="og:description" content="页面可见性API 先解决问题，后面理解">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-04-22T15:35:14.370Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浏览器切换页签时触发事件">
+<meta name="twitter:description" content="页面可见性API 先解决问题，后面理解">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">蒋冲</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            <section id="main"><article id="post-浏览器切换页签时触发事件" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            浏览器切换页签时触发事件
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/21/浏览器切换页签时触发事件/">
+            <time datetime="2018-04-21T15:28:25.000Z" itemprop="datePublished">2018-04-21</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/question/">question</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h4 id="页面可见性API"><a href="#页面可见性API" class="headerlink" title="页面可见性API"></a>页面可见性API</h4><blockquote>
+<p>先解决问题，后面理解</p>
+</blockquote>
+<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleVisibilityChange</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">document</span>.hidden) &#123;</span><br><span class="line">    <span class="comment">//这里是页签最小化或被切换的时候</span></span><br><span class="line">  &#125; <span class="keyword">else</span>  &#123;</span><br><span class="line">    <span class="comment">//这里是页签重新展示出来的时候</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">"visibilitychange"</span>, handleVisibilityChange, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>简介</p>
+</blockquote>
+<ul>
+<li>通过标签浏览，任何给定的网页都处于后台并因此对用户不可见是合理的机会。页面可见性API提供了可以监视的事件，以了解文档何时可见或隐藏，以及查看页面当前可见性状态的功能。</li>
+</ul>
+<pre><code>注意：页面可见性API通过让页面在文档不可见时避免执行不必要的任务来节省资源和提高性能特别有用。
+</code></pre><ul>
+<li>当用户最小化窗口或切换到另一个选项卡时，API会发送一个visibilitychange事件让听众知道页面的状态已更改。您可以检测到事件并执行一些操作或行为不同。例如，如果您的网络应用正在播放视频，则可以在用户将选项卡放入后台时暂停视频，并在用户返回选项卡时恢复播放。用户不会在视频中失去自己的位置，视频的配乐不会干扰新前景标签中的音频，并且用户在此期间不会错过任何视频。</li>
+</ul>
+<pre><code>注意：虽然onblur并且onfocus会告诉你用户是否切换窗口，但并不一定意味着它已隐藏。只有当用户切换标签或最小化包含标签的浏览器窗口时，页面才会隐藏。
+</code></pre><p><strong>事件：</strong></p>
+<ol>
+<li><p><code>visibilitychange</code></p>
+<p> 浏览器标签页被隐藏或显示的时候会触发visibilitychange事件。 </p>
+</li>
+</ol>
+<p><strong>属性：</strong></p>
+<ol>
+<li><code>Document.hidden</code>  </li>
+<li><code>Document.visibilityState</code> </li>
+</ol>
+<blockquote>
+<p>页面可见性API将以下属性添加到Document界面中：</p>
+</blockquote>
+<ul>
+<li><p><code>Document.hidden</code><br>返回true页面是否处于被认为对用户隐藏的状态，false否则返回。  </p>
+</li>
+<li><p><code>Document.visibilityState</code> 四个值<br>  <code>A DOMString</code>表示文档当前的可见性状态。可能的值是： </p>
+<ul>
+<li><p><code>visible</code><br>页面内容可能至少部分可见。实际上这意味着该页面是非最小化窗口的前景选项卡。</p>
+</li>
+<li><p><code>hidden</code><br>该页面的内容对用户不可见，这可能是由于文档的标签位于后台或最小化窗口的一部分，或者由于设备的屏幕关闭了。</p>
+</li>
+<li><p><code>prerender</code><br>该页面的内容正在被预渲染，并且对用户不可见。文档可以在<code>prerender</code>状态中启动，但不会从任何其他状态切换到此状态，因为文档只能预渲染一次。<br>注意：并非所有浏览器都支持预渲染。      </p>
+</li>
+<li><code>unloaded</code><br>该页面正在从内存中卸载。<br>注意：并非所有浏览器都支持该<code>unloaded</code>值。   </li>
+</ul>
+</li>
+<li><p><code>Document.onvisibilitychange</code><br>一个<code>EventListener</code>提供的代码时，被称为<code>visibilitychange</code>事件。     </p>
+</li>
+</ul>
+<h3 id="兼容问题"><a href="#兼容问题" class="headerlink" title="兼容问题"></a>兼容问题</h3><blockquote>
+<p>为了支持老版本的浏览器，我们需要对document.hidden在做一些前缀处理：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getHiddenProp</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> prefixes = [<span class="string">'webkit'</span>,<span class="string">'moz'</span>,<span class="string">'ms'</span>,<span class="string">'o'</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// if 'hidden' is natively supported just return it</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="string">'hidden'</span> <span class="keyword">in</span> <span class="built_in">document</span>) <span class="keyword">return</span> <span class="string">'hidden'</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// otherwise loop over all the known prefixes until we find one</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; prefixes.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> ((prefixes[i] + <span class="string">'Hidden'</span>) <span class="keyword">in</span> <span class="built_in">document</span>) </span><br><span class="line">            <span class="keyword">return</span> prefixes[i] + <span class="string">'Hidden'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// otherwise it's not supported</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>同理以获取document.visibilityState属性：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getVisibilityState</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> prefixes = [<span class="string">'webkit'</span>, <span class="string">'moz'</span>, <span class="string">'ms'</span>, <span class="string">'o'</span>];</span><br><span class="line">    <span class="keyword">if</span> (<span class="string">'visibilityState'</span> <span class="keyword">in</span> <span class="built_in">document</span>) <span class="keyword">return</span> <span class="string">'visibilityState'</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; prefixes.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> ((prefixes[i] + <span class="string">'VisibilityState'</span>) <span class="keyword">in</span> <span class="built_in">document</span>)</span><br><span class="line">            <span class="keyword">return</span> prefixes[i] + <span class="string">'VisibilityState'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// otherwise it's not supported</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考阅读：<br><a href="https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API</a></p>
+</blockquote>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/04/21/浏览器切换页签时触发事件/" data-id="cjgazdgnd000gzgfmqivhzstm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/04/17/跨域请求/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">js跨域请求</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+
+</section>
+            
+            
+
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 Zi Yi<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
