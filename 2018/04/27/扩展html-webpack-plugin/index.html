@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>扩展html-webpack-plugin | 蒋冲</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="打包对文件的修改">
+<meta name="keywords" content="webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="扩展html-webpack-plugin">
+<meta property="og:url" content="http://yoursite.com/2018/04/27/扩展html-webpack-plugin/index.html">
+<meta property="og:site_name" content="蒋冲">
+<meta property="og:description" content="打包对文件的修改">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-18T15:44:02.192Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="扩展html-webpack-plugin">
+<meta name="twitter:description" content="打包对文件的修改">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">蒋冲</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            <section id="main"><article id="post-扩展html-webpack-plugin" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            扩展html-webpack-plugin
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/27/扩展html-webpack-plugin/">
+            <time datetime="2018-04-27T05:39:49.000Z" itemprop="datePublished">2018-04-27</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/webpack/">webpack</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h3 id="打包对文件的修改"><a href="#打包对文件的修改" class="headerlink" title="打包对文件的修改"></a>打包对文件的修改</h3><a id="more"></a>
+<h4 id="在打包生成文件到dist前修改文本"><a href="#在打包生成文件到dist前修改文本" class="headerlink" title="在打包生成文件到dist前修改文本"></a>在打包生成文件到dist前修改文本</h4><blockquote>
+<p>我们修改一个打包<code>index.html</code>文件里<code>css</code>里的<code>url(./#/#.png)</code>、<br>给打包的后的图片引入添加时间戳</p>
+</blockquote>
+<ol>
+<li>创建一个函数</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyPlugin</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        param&#123;*&#125; options 这是想要传入的参数（可以传值，也可以在需要添加的位置生成时间戳）</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">this</span>.options = options;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">"webpack"</span>)</span><br><span class="line"><span class="keyword">var</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">"html-webpack-plugin"</span>)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>我创建时间戳，插入到<code>webpack</code>导出的<code>script</code>之前。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    这里可以传参</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">new</span> MyPlugin(&#123;</span><br><span class="line">    <span class="string">"timer"</span>:<span class="string">"123456"</span></span><br><span class="line">&#125;),</span><br><span class="line"></span><br><span class="line">这里是要写在plugins数组里面</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><code>webpack</code> 会给我们提供的回调函数提供参数，我们可以注册编译阶段的事件了。<code>html-webpack-plugin</code> 提供了一系列事件。</p>
+</li>
+<li><p>Async:</p>
+<ul>
+<li><p><code>html-webpack-plugin-before-html-generation</code>  </p>
+</li>
+<li><p><code>html-webpack-plugin-before-html-processing</code>      </p>
+</li>
+<li><code>html-webpack-plugin-alter-asset-tags</code>      </li>
+<li><code>html-webpack-plugin-after-html-processing</code>      </li>
+<li><code>html-webpack-plugin-after-emit</code>   </li>
+</ul>
+</li>
+<li>Sync:   <ul>
+<li><code>html-webpack-plugin-alter-chunks</code></li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>我们可以注册到它处理HTML之前，使用<code>html-webpack-plugin-before-html-processing</code> 事件。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> jsdom = <span class="built_in">require</span>(<span class="string">"jsdom"</span>);</span><br><span class="line"><span class="comment">//操作DOM要在这引入找个包</span></span><br><span class="line"><span class="keyword">const</span> &#123; JSDOM &#125; = jsdom;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MyPlugin.prototype.apply = <span class="function"><span class="keyword">function</span> (<span class="params">compiler</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> timer = <span class="keyword">this</span>.options.timer;</span><br><span class="line">    compiler.plugin(<span class="string">'compilation'</span>, (compilation, options) =&gt; &#123;</span><br><span class="line">        compilation.plugin(</span><br><span class="line">            <span class="string">'html-webpack-plugin-before-html-processing'</span>,</span><br><span class="line">            (data, cb) =&gt; &#123;</span><br><span class="line">                <span class="comment">//这里的data是打包要生成的文件，可进行修改操作</span></span><br><span class="line">                </span><br><span class="line">                <span class="comment">//用正则匹配了一下带.png的地方给加戳</span></span><br><span class="line">                data = <span class="built_in">JSON</span>.stringify(data)</span><br><span class="line">                <span class="keyword">var</span> result = data.replace(<span class="regexp">/.png/g</span>, <span class="string">'.png?v='</span>+timer);</span><br><span class="line">                data = <span class="built_in">JSON</span>.parse(result)</span><br><span class="line">                </span><br><span class="line">                </span><br><span class="line">                <span class="comment">//操作DOM要进行转换</span></span><br><span class="line">                <span class="keyword">var</span> dom = <span class="keyword">new</span> JSDOM(data.html);</span><br><span class="line">                </span><br><span class="line">                ....这里操作DOM</span><br><span class="line">                </span><br><span class="line">                data.html = dom.serialize();<span class="comment">//把修改的DOM树附上去，然后返回出去</span></span><br><span class="line">                cb(<span class="literal">null</span>, data)</span><br><span class="line">            &#125;</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> jsdom = <span class="built_in">require</span>(<span class="string">"jsdom"</span>);</span><br><span class="line"><span class="comment">//操作DOM要在这引入找个包</span></span><br><span class="line"><span class="keyword">const</span> &#123; JSDOM &#125; = jsdom;</span><br><span class="line"><span class="keyword">var</span> timer = <span class="built_in">Date</span>.now();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyPlugin</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.options = options;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyPlugin.prototype.apply = <span class="function"><span class="keyword">function</span> (<span class="params">compiler</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> timer = <span class="keyword">this</span>.options.timer;</span><br><span class="line">    compiler.plugin(<span class="string">'compilation'</span>, (compilation, options) =&gt; &#123;</span><br><span class="line">        compilation.plugin(</span><br><span class="line">            <span class="string">'html-webpack-plugin-before-html-processing'</span>,</span><br><span class="line">            (data, cb) =&gt; &#123;</span><br><span class="line">                <span class="comment">//这里的data是打包要生成的文件，可进行修改操作</span></span><br><span class="line">                </span><br><span class="line">                <span class="comment">//用正则匹配了一下带.png的地方给加戳</span></span><br><span class="line">                data = <span class="built_in">JSON</span>.stringify(data)</span><br><span class="line">                <span class="keyword">var</span> result = data.replace(<span class="regexp">/.png/g</span>, <span class="string">'.png?v='</span>+timer);</span><br><span class="line">                data = <span class="built_in">JSON</span>.parse(result)</span><br><span class="line">                </span><br><span class="line">                </span><br><span class="line">                <span class="comment">//操作DOM要进行转换</span></span><br><span class="line">                <span class="keyword">var</span> dom = <span class="keyword">new</span> JSDOM(data.html);</span><br><span class="line">                </span><br><span class="line">                ....这里操作DOM</span><br><span class="line">                </span><br><span class="line">                data.html = dom.serialize();<span class="comment">//把修改的DOM树附上去，然后返回出去</span></span><br><span class="line">                cb(<span class="literal">null</span>, data)</span><br><span class="line">            &#125;</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">plugins:[</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">        filename: path.resolve(__dirname, config.build.index),</span><br><span class="line">        template: <span class="string">"src/index.html"</span>,</span><br><span class="line">        chunksSortMode: <span class="string">"dependency"</span>,</span><br><span class="line">        inject: <span class="literal">true</span>,</span><br><span class="line">        minify: &#123;</span><br><span class="line">            collapseWhitespace: <span class="literal">true</span>,</span><br><span class="line">            removeAttributeQuotes: <span class="literal">true</span>,</span><br><span class="line">            removeComments: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="keyword">new</span> MyPlugin(&#123;</span><br><span class="line">        <span class="string">"timer"</span>:<span class="string">"123456"</span></span><br><span class="line">    &#125;),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/04/27/扩展html-webpack-plugin/" data-id="cjggnogob000jn3s6us900st4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/04/27/两点之间计算角度/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    两点之间计算角度
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2018/04/25/数字补零或字符串补零/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">数字补零或字符串补零</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+
+</section>
+            
+            
+
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 Zi Yi<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
