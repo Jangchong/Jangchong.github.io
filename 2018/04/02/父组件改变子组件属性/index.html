@@ -200,7 +200,7 @@
 <ul>
 <li>这里的<code>defined</code>是自己定义的名字，添加在子组件<code>props</code>里面，需要注意是：如果是驼峰名，例如：<code>nameShow</code>，<code>props</code>里面是：<code>props:[&quot;nameShow&quot;]</code>，父组件要添加属性是<code>v-bind:name-show=&quot;&quot;</code>;要添加“-”。</li>
 </ul>
-<ol start="2">
+<ol>
 <li>子组件如何获取改变的事件</li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//子组件添加：</span></span><br><span class="line"> <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            props:[<span class="string">"defined"</span>],</span><br><span class="line">            watch:&#123;</span><br><span class="line">                defined:<span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line">                    <span class="comment">//这里面的val就是defined的key值</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -214,7 +214,7 @@
 <ul>
 <li>需要在什么时候改变父组件属性时，调用<code>this.$emit()</code></li>
 </ul>
-<ol start="2">
+<ol>
 <li>父组件<ol>
 <li>要在父组件调用组件的元素上添加一个事件方法：<code>v-on:子级自定义=&quot;&quot;</code></li>
 <li>根据父组件的方法来改变父组件上的属性</li>
@@ -232,7 +232,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/04/02/父组件改变子组件属性/" data-id="cjhanq7iv000i3es6bbb9uu3v" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/04/02/父组件改变子组件属性/" data-id="cjhc46nlz000ozjs6fpqaf2m9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
