@@ -3,20 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Es2017中新的字符串方法:padStart和padEnd | 蒋冲</title>
+    <title>获取扩展名 | 蒋冲</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="填充字符 padStart和padEnd填充字符">
-<meta name="keywords" content="js,source,es2017">
+    <meta name="description" content="完成 extname 函数，它会接受一个文件名作为参数，你需要返回它的扩展名。 例如：输入 extname(‘emoji.png’)，返回 ‘.png’。">
+<meta name="keywords" content="fn-s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Es2017中新的字符串方法:padStart和padEnd">
-<meta property="og:url" content="http://yoursite.com/2018/04/22/Es2017中新的字符串方法-padStart和padEnd/index.html">
+<meta property="og:title" content="获取扩展名">
+<meta property="og:url" content="http://yoursite.com/2018/04/30/返回扩展名/index.html">
 <meta property="og:site_name" content="蒋冲">
-<meta property="og:description" content="填充字符 padStart和padEnd填充字符">
+<meta property="og:description" content="完成 extname 函数，它会接受一个文件名作为参数，你需要返回它的扩展名。 例如：输入 extname(‘emoji.png’)，返回 ‘.png’。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-26T15:05:24.354Z">
+<meta property="og:updated_time" content="2018-05-29T15:52:57.018Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Es2017中新的字符串方法:padStart和padEnd">
-<meta name="twitter:description" content="填充字符 padStart和padEnd填充字符">
+<meta name="twitter:title" content="获取扩展名">
+<meta name="twitter:description" content="完成 extname 函数，它会接受一个文件名作为参数，你需要返回它的扩展名。 例如：输入 extname(‘emoji.png’)，返回 ‘.png’。">
     
 
     
@@ -144,7 +144,7 @@
 
         <div class="outer">
             
-            <section id="main"><article id="post-Es2017中新的字符串方法-padStart和padEnd" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-返回扩展名" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -152,7 +152,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            Es2017中新的字符串方法:padStart和padEnd
+            获取扩展名
         </h1>
     
 
@@ -161,8 +161,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/04/22/Es2017中新的字符串方法-padStart和padEnd/">
-            <time datetime="2018-04-22T15:39:32.000Z" itemprop="datePublished">2018-04-22</time>
+        <a href="/2018/04/30/返回扩展名/">
+            <time datetime="2018-04-30T09:11:23.000Z" itemprop="datePublished">2018-04-30</time>
         </a>
     </div>
 
@@ -170,13 +170,13 @@
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/js/">js</a>
+        <a class="article-category-link" href="/categories/fn/">fn</a>
     </div>
 
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/es2017/">es2017</a>, <a class="tag-link" href="/tags/js/">js</a>, <a class="tag-link" href="/tags/source/">source</a>
+        <a class="tag-link" href="/tags/fn-s/">fn-s</a>
     </div>
 
                     </div>
@@ -187,40 +187,9 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h3 id="填充字符"><a href="#填充字符" class="headerlink" title="填充字符"></a>填充字符</h3><blockquote>
-<p>padStart和padEnd填充字符</p>
+            <h4 id="完成-extname-函数，它会接受一个文件名作为参数，你需要返回它的扩展名。"><a href="#完成-extname-函数，它会接受一个文件名作为参数，你需要返回它的扩展名。" class="headerlink" title="完成 extname 函数，它会接受一个文件名作为参数，你需要返回它的扩展名。"></a>完成 extname 函数，它会接受一个文件名作为参数，你需要返回它的扩展名。</h4><blockquote>
+<p>例如：输入 extname(‘emoji.png’)，返回 ‘.png’。<br><a id="more"></a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> extname = <span class="function">(<span class="params">filename</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span>(filename.indexOf(<span class="string">"."</span>) == <span class="number">-1</span> || filename.indexOf(<span class="string">"."</span>)&lt;<span class="number">1</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> n = filename.lastIndexOf(<span class="string">"."</span>)</span><br><span class="line">  <span class="keyword">return</span> filename.slice(n)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<a id="more"></a>
-<ul>
-<li>填充字符串的用例包括：</li>
-<li>给需要的数字添加长度补0</li>
-<li>以等宽字体显示平整的数据。</li>
-<li>在文件名或URL中添加计数或ID：’file 001.txt’。</li>
-<li>对齐控制台输出： ‘Test 001: ✓’。</li>
-<li>打印具有固定位数的十六进制或二进制数字：’0x00FF’</li>
-</ul>
-<blockquote>
-<p>Demo1:  填充0</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*   param &#123;*&#125;  padStart(n,str)  在前面添加</span></span><br><span class="line"><span class="comment">*   param &#123;*&#125;  padEnd(n,str)</span></span><br><span class="line"><span class="comment">*   </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//根据位数前后补0</span></span><br><span class="line"><span class="string">"211"</span>.toString().padStart(<span class="number">5</span>,<span class="string">"0"</span>)</span><br><span class="line"><span class="string">"00211"</span></span><br><span class="line"></span><br><span class="line"><span class="string">"211"</span>.toString().padEnd(<span class="number">5</span>,<span class="string">"0"</span>)</span><br><span class="line"><span class="string">"21100"</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Demo2: 第二个参数添加常度超过总长度，会自动截取到第几位</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"2112"</span>.toString().padStart(<span class="number">5</span>,<span class="string">"abcd"</span>)</span><br><span class="line"><span class="string">"a2112"</span></span><br><span class="line"></span><br><span class="line"><span class="string">"2112"</span>.toString().padEnd(<span class="number">5</span>,<span class="string">"abcd"</span>)</span><br><span class="line"><span class="string">"2112a"</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Demo3: 第二个参数不写，则以空格的形式进行填充</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"123"</span>.toString().padEnd(<span class="number">5</span>)</span><br><span class="line"><span class="string">"123  "</span></span><br><span class="line"></span><br><span class="line"><span class="string">"123"</span>.toString().padStart(<span class="number">5</span>)</span><br><span class="line"><span class="string">"  123"</span></span><br></pre></td></tr></table></figure>
-<p>逻辑实现</p>
-<blockquote>
-<p><code>padStat()</code>逻辑实现</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.prototype.padStart = <span class="function"><span class="keyword">function</span> (<span class="params">maxLength, fillString=<span class="string">' '</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> str = <span class="built_in">String</span>(<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">if</span> (str.length &gt;= maxLength) &#123;</span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    fillString = <span class="built_in">String</span>(fillString);</span><br><span class="line">    <span class="keyword">if</span> (fillString.length === <span class="number">0</span>) &#123;</span><br><span class="line">        fillString = <span class="string">' '</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">let</span> fillLen = maxLength - str.length;</span><br><span class="line">    <span class="keyword">let</span> timesToRepeat = <span class="built_in">Math</span>.ceil(fillLen / fillString.length);</span><br><span class="line">    <span class="keyword">let</span> truncatedStringFiller = fillString</span><br><span class="line">        .repeat(timesToRepeat)</span><br><span class="line">        .slice(<span class="number">0</span>, fillLen);</span><br><span class="line">    <span class="keyword">return</span> truncatedStringFiller + str;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><code>padStart()</code>和<code>padEnd()</code> 的实现只是最后一行是不同</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> str + truncatedStringFiller;</span><br></pre></td></tr></table></figure>
-<p>参照了：<a href="http://exploringjs.com/es2016-es2017/ch_object-getownpropertydescriptors.html" target="_blank" rel="noopener">http://exploringjs.com/es2016-es2017/ch_object-getownpropertydescriptors.html</a></p>
 
         
         </div>
@@ -231,7 +200,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/04/22/Es2017中新的字符串方法-padStart和padEnd/" data-id="cjhrtvjgf0000r6s6qkeov2u9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/04/30/返回扩展名/" data-id="cjhru3vod002dr6s647476i35" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -306,19 +275,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/04/24/touchSlide/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    touchSlide
-                
-            </div>
-        </a>
     
-    
-        <a href="/2018/04/21/浏览器切换页签时触发事件/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/04/28/数字转换中文/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">浏览器切换页签时触发事件</div>
+            <div class="article-nav-title">数字转换成中文大写</div>
         </a>
     
 </nav>
