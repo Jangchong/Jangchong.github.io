@@ -6,14 +6,14 @@
     <title>js跨域请求 | 蒋冲</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="跨域所出现的问题">
-<meta name="keywords" content="js">
+<meta name="keywords" content="js,source">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js跨域请求">
 <meta property="og:url" content="http://yoursite.com/2018/04/17/跨域请求/index.html">
 <meta property="og:site_name" content="蒋冲">
 <meta property="og:description" content="跨域所出现的问题">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-26T14:58:49.767Z">
+<meta property="og:updated_time" content="2018-04-26T15:06:03.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js跨域请求">
 <meta name="twitter:description" content="跨域所出现的问题">
@@ -170,13 +170,13 @@
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/js/">js</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/js/source/">source</a>
+        <a class="article-category-link" href="/categories/js/">js</a>
     </div>
 
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/js/">js</a>
+        <a class="tag-link" href="/tags/js/">js</a>, <a class="tag-link" href="/tags/source/">source</a>
     </div>
 
                     </div>
@@ -194,7 +194,7 @@
 <h2 id="跨域请求url返回json数据"><a href="#跨域请求url返回json数据" class="headerlink" title="跨域请求url返回json数据"></a>跨域请求url返回json数据</h2><blockquote>
 <p>先解决问题，再看原理</p>
 </blockquote>
-<p>Demo:<br>我要请求一个获取当前本机登录的IP地址；跟据IP地址来判断登录所在的区域<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一插入script标签。src就是搜狐IP地址的查询</span></span><br><span class="line"></span><br><span class="line">&lt;script src=<span class="string">"http://pv.sohu.com/cityjson"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *   这是我们想要的信息，是绝对地址要返回的数据。</span></span><br><span class="line"><span class="comment"> *   var returnCitySN = &#123;"cip": "1.119.148.119", "cid": "CN", "cname": "CHINA"&#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">//  这样就可以获取到数据；获取数据要根据页面返回的对象名字来获取。</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">//  注意：调用returnCitySN时要在script引用后。</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="built_in">console</span>.log( returnCitySN ); </span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>Demo:<br>我要请求一个获取当前本机登录的IP地址；跟据IP地址来判断登录所在的区域<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一插入script标签。src就是搜狐IP地址的查询</span></span><br><span class="line"></span><br><span class="line">&lt;script src=<span class="string">"http://pv.sohu.com/cityjson"</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *   这是我们想要的信息，是绝对地址要返回的数据。</span></span><br><span class="line"><span class="comment"> *   var returnCitySN = &#123;"cip": "1.119.148.119", "cid": "CN", "cname": "CHINA"&#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">//  这样就可以获取到数据；获取数据要根据页面返回的对象名字来获取。</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">//  注意：调用returnCitySN时要在script引用后。</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="built_in">console</span>.log( returnCitySN ); </span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>Demo2:<br>创建一个<code>script</code>标签；插入Dom中</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> label = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">label.src=<span class="string">"http://pv.sohu.com/cityjson"</span>;</span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"body"</span>).appendChild(label);</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果生成就调用 会获取不到</span></span><br><span class="line"><span class="built_in">console</span>.log(returnCitySN)</span><br><span class="line"></span><br><span class="line"><span class="comment">//这时候就会出现，现在生成的Dom才会渲染到Dom中</span></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(returnCitySN)</span><br><span class="line">&#125;,<span class="number">30</span>)</span><br></pre></td></tr></table></figure>
 <p>1.导致跨域问题是因为同源策略问题。      </p>
@@ -233,7 +233,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/04/17/跨域请求/" data-id="cjggnogok000xn3s6h1mv8240" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/04/17/跨域请求/" data-id="cjggnp95k000xnhs6qymnupw5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
