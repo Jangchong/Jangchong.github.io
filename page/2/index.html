@@ -152,7 +152,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                18
+                19
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -242,7 +242,140 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/04/12/vue列表渲染及条件渲染实战/" data-id="cjhrw2gyj000d2ms61vi654ou" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/04/12/vue列表渲染及条件渲染实战/" data-id="cjhtbdv63000br0s63lpy6t5e" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-vue基础" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/10/vue基础/">Vue基础</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/10/vue基础/">
+            <time datetime="2018-04-10T13:12:33.000Z" itemprop="datePublished">2018-04-10</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/vue/">vue</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/vue/">vue</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><blockquote>
+<p>vue入门基了解</p>
+</blockquote></p>
+            <p class="article-more-link">
+                <a href="/2018/04/10/vue基础/#more">查看更多</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/04/10/vue基础/" data-id="cjhtbdv7w002pr0s6udbiafku" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -376,7 +509,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/04/09/Promise/" data-id="cjhrw2gy100012ms6vx5yzdd7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/04/09/Promise/" data-id="cjhtbdv5w0005r0s6u2esoyo5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -512,7 +645,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/04/08/transform中所遇到问题/" data-id="cjhrw2gye00092ms6kdnvnhba" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/04/08/transform中所遇到问题/" data-id="cjhtbdv62000ar0s6o60846tw" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -645,7 +778,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/04/08/默认滚动条样式修改/" data-id="cjhrw2gz1001c2ms6zehqw9f7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/04/08/默认滚动条样式修改/" data-id="cjhtbdv7t002nr0s6zi3t0tv2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -782,7 +915,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/04/02/vue父组件改变子组件属性/" data-id="cjhrw2gym000h2ms6ijk9am2w" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/04/02/vue父组件改变子组件属性/" data-id="cjhtbdv64000fr0s6nymvpukv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -913,7 +1046,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/03/24/七种三栏布局/" data-id="cjhrw2gyo000i2ms6jc01fpza" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/03/24/七种三栏布局/" data-id="cjhtbdv66000gr0s6rrgfh6t2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1038,7 +1171,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/03/24/新页面/" data-id="cjhrw2gyu000v2ms62lxnhi09" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/03/24/新页面/" data-id="cjhtbdv6n0011r0s6jaj4scvo" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1166,7 +1299,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/03/23/hello-world/" data-id="cjhrw2gyd00082ms6wtbjysz1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/03/23/hello-world/" data-id="cjhtbdv5x0006r0s6w1qqqnd0" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1310,7 +1443,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/fn/">fn</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/fn/">fn</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1319,7 +1452,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -1328,7 +1461,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es2015/">es2015</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es2017/">es2017</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fn-s/">fn-s</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fn-ss/">fn-ss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lv-s/">lv.s</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/move/">move</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/question/">question</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/source/">source</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es2015/">es2015</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es2017/">es2017</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fn-s/">fn-s</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fn-ss/">fn-ss</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lv-s/">lv.s</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/move/">move</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/question/">question</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/source/">source</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1337,7 +1470,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/css/" style="font-size: 13.33px;">css</a> <a href="/tags/es2015/" style="font-size: 10px;">es2015</a> <a href="/tags/es2017/" style="font-size: 10px;">es2017</a> <a href="/tags/fn-s/" style="font-size: 10px;">fn-s</a> <a href="/tags/fn-ss/" style="font-size: 10px;">fn-ss</a> <a href="/tags/js/" style="font-size: 16.67px;">js</a> <a href="/tags/lv-s/" style="font-size: 10px;">lv.s</a> <a href="/tags/move/" style="font-size: 10px;">move</a> <a href="/tags/question/" style="font-size: 13.33px;">question</a> <a href="/tags/source/" style="font-size: 20px;">source</a> <a href="/tags/vue/" style="font-size: 13.33px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
+            <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/css/" style="font-size: 12.5px;">css</a> <a href="/tags/es2015/" style="font-size: 10px;">es2015</a> <a href="/tags/es2017/" style="font-size: 10px;">es2017</a> <a href="/tags/fn-s/" style="font-size: 10px;">fn-s</a> <a href="/tags/fn-ss/" style="font-size: 10px;">fn-ss</a> <a href="/tags/js/" style="font-size: 17.5px;">js</a> <a href="/tags/lv-s/" style="font-size: 10px;">lv.s</a> <a href="/tags/move/" style="font-size: 10px;">move</a> <a href="/tags/question/" style="font-size: 12.5px;">question</a> <a href="/tags/source/" style="font-size: 20px;">source</a> <a href="/tags/vue/" style="font-size: 15px;">vue</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
         </div>
     </div>
 
