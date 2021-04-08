@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>Arrary操作 | 蒋冲</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Arrary什么是数组(Array)数组就是一组数据的集合单一变量中存储多个值">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arrary操作">
+<meta property="og:url" content="http://yoursite.com/2021/04/07/Aarray/index.html">
+<meta property="og:site_name" content="蒋冲">
+<meta property="og:description" content="Arrary什么是数组(Array)数组就是一组数据的集合单一变量中存储多个值">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-04-08T15:47:16.855Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Arrary操作">
+<meta name="twitter:description" content="Arrary什么是数组(Array)数组就是一组数据的集合单一变量中存储多个值">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">蒋冲</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            <section id="main"><article id="post-Aarray" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Arrary操作
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2021/04/07/Aarray/">
+            <time datetime="2021-04-07T14:52:43.000Z" itemprop="datePublished">2021-04-07</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/js/">js</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/js/">js</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">文章目录</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrary"><span class="toc-number">1.</span> <span class="toc-text">Arrary</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是数组-Array"><span class="toc-number">1.0.1.</span> <span class="toc-text">什么是数组(Array)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建数组方式"><span class="toc-number">1.0.2.</span> <span class="toc-text">创建数组方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数组方法"><span class="toc-number">1.0.3.</span> <span class="toc-text">数组方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数组方法详解"><span class="toc-number">1.0.4.</span> <span class="toc-text">数组方法详解</span></a></li></ol></li></ol></li></ol>
+                </div>
+            
+            <h2 id="Arrary"><a href="#Arrary" class="headerlink" title="Arrary"></a>Arrary</h2><h4 id="什么是数组-Array"><a href="#什么是数组-Array" class="headerlink" title="什么是数组(Array)"></a>什么是数组(Array)</h4><p>数组就是一组数据的集合<br>单一变量中存储多个值     </p>
+<a id="more"></a>
+<h4 id="创建数组方式"><a href="#创建数组方式" class="headerlink" title="创建数组方式"></a>创建数组方式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>([size]); <span class="comment">//指定长度</span></span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(item1,item2,...); <span class="comment">//创建并赋值</span></span><br><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"></span><br><span class="line"><span class="comment">//伪数组转换数组</span></span><br><span class="line"><span class="keyword">var</span> arr = <span class="built_in">Array</span>.from(伪数组)</span><br><span class="line"><span class="comment">//将一组值转换成数组</span></span><br><span class="line"><span class="keyword">var</span> arr = <span class="built_in">Array</span>.of(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>) <span class="comment">//[1,2,3]</span></span><br></pre></td></tr></table></figure>
+<h4 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h4><p><code>对象继承方法、数组转换方法、栈和队列方法、数组排序方法、数组拼接方法、创建子数组方法、数组删改方法、数组位置方法、数组归并方法和数组迭代方法</code></p>
+<blockquote>
+<p>重点：先把全部方法贴上，下面再一一分析</p>
+</blockquote>
+<p><code>toString()</code><br><code>valueOf()</code><br><code>toLocaleString()</code><br><code>join()</code><br><code>push()</code><br><code>pop()</code><br><code>unshift()</code><br><code>shift()</code><br><code>reverse()</code><br><code>sort()</code><br><code>concat()</code><br><code>splice()</code><br><code>slice()</code><br><code>indexOf()</code><br><code>lastIndexOf()</code><br><code>reduce()</code><br><code>reduceRight()</code><br><code>map()</code><br><code>forEach()</code><br><code>every()</code><br><code>some()</code><br><code>filter()</code>      </p>
+<h4 id="数组方法详解"><a href="#数组方法详解" class="headerlink" title="数组方法详解"></a>数组方法详解</h4><blockquote>
+<p>对象继承方法</p>
+</blockquote>
+<pre><code>数组是一种特殊的对象，继承了对象Object的toString()、toLocaleString()和valueOf()方法
+</code></pre><ul>
+<li><p><code>toString()</code><br>toString()方法返回由数组中每个值的字符串形式拼接而成的一个以逗号分隔的字符串</p>
+</li>
+<li><p><code>valueOf()</code><br>方法返回数组对象本身</p>
+</li>
+<li><p><code>toLocaleString()</code><br>经常返回与<code>toString()</code>方法相同的值</p>
+</li>
+</ul>
+<blockquote>
+<p>数组转换方法</p>
+</blockquote>
+<ul>
+<li><p><code>join()</code> </p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a.join());<span class="comment">//'1,2,3'</span></span><br><span class="line"><span class="built_in">console</span>.log(a.join(<span class="string">' '</span>));<span class="comment">//'1 2 3'</span></span><br><span class="line"><span class="built_in">console</span>.log(a.join(<span class="string">''</span>));<span class="comment">//'123'</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>栈和队列方法</p>
+</blockquote>
+<ul>
+<li><code>push()</code><br>添加到数组末尾</li>
+<li><code>pop()</code><br>数组末尾移除最后一项</li>
+<li><code>unshift()</code><br>数组前端添加任意个项并返回新数组长度</li>
+<li><code>shift()</code><br>移除数组中的第一个项并返回该项</li>
+</ul>
+<blockquote>
+<p>数组排序方法</p>
+</blockquote>
+<ul>
+<li><code>reverse()</code><br>反转数组的顺序,==原数组顺序也发生改变==</li>
+<li><code>sort()</code><br>默认情况下，sort()方法按字符串升序排列数组项，sort方法会调用每个数组项的toString()方法，然后比较得到的字符串排序，返回经过排序之后的数组，==原数组顺序也发生改变==  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">50</span>];</span><br><span class="line"><span class="built_in">console</span>.log(array,array.sort());<span class="comment">//[1, 10, 5, 50]</span></span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string">sort()方法可以接受一个比较函数作为参数</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>js</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compare</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; y)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(x &gt; y)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">6</span>]</span><br><span class="line">arr.sort(compare); <span class="comment">//[1, 2, 3, 3, 4, 6, 7]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>数组拼接方法</p>
+</blockquote>
+<ul>
+<li><code>concat()</code><br>concat()方法基于当前数组中的所有项创建一个新数组,==concat()不影响原数组==</li>
+</ul>
+<blockquote>
+<p>数组删改方法  </p>
+</blockquote>
+<ul>
+<li><code>splice()</code><br>splice()和slice()拥有非常相似的名字，但它们的功能却有本质的区别。splice()方法用于删除原数组的一部分成员，并可以在被删除的位置添加入新的数组成员，该方法会改变原数组<br>splice()返回一个由删除元素组成的数组，或者如果没有删除元素就返回一个空数组<br>splice()的第一个参数start指定了插入或删除的起始位置。如果start是负数，则start = max(length + start,0)；如果start是NaN，则相当于start = 0</li>
+</ul>
+<blockquote>
+<p>创建子数组方法</p>
+</blockquote>
+<ul>
+<li><code>slice()</code></li>
+</ul>
+<blockquote>
+<p>数组位置方法</p>
+</blockquote>
+<ul>
+<li><code>indexOf()</code></li>
+<li><code>lastIndexOf()</code></li>
+</ul>
+<blockquote>
+<p>数组归并方法</p>
+</blockquote>
+<ul>
+<li><code>reduce()</code></li>
+<li><code>reduceRight()</code></li>
+</ul>
+<blockquote>
+<p>数组迭代方法      </p>
+</blockquote>
+<p>ECMAScript5为数组定义了5个迭代方法</p>
+<ul>
+<li><code>map()</code></li>
+<li><code>forEach()</code></li>
+<li><code>every()</code></li>
+<li><code>some()</code></li>
+<li><code>filter()</code></li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2021/04/07/Aarray/" data-id="ckn91lfap0000m3fy7gg6sip3" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2021/02/10/发布-订阅/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">发布-订阅</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+
+</section>
+            
+            
+
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2021 Zi Yi<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
